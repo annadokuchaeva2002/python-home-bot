@@ -1,3 +1,4 @@
+from utils import logger
 from aiogram import Bot, Dispatcher, types
 from environs import Env
 from datetime import datetime
