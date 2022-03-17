@@ -1,6 +1,7 @@
 from aiogram import Bot, Dispatcher, types
 from environs import Env
 from datetime import datetime
+from utils.set_bot_commands import commands
 
 
 env = Env()
@@ -25,4 +26,5 @@ async def on_startup(dispatcher):
     await dispatcher.bot.send_message(chat_id=ADMIN,
                                       text=f"<b>🤖 Бот запущен</b>\n"
                                            f"<b>🕔 UTC:</b> <i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')}</i>")
+    await commands(dispatcher)
 
